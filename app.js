@@ -1,17 +1,45 @@
 //Write a function called cubed(x) that accepts an argument x and returns its cubed value
 
-//write a function called power that accepts two args (base, exp) and returns the power  
+function cubed(x){
+  return x * x * x;
+}
+cubed(2);
 
+//write a function called power that accepts two args (base, exp) and returns the power  
+function powers(base, exponent){
+  var runningTotal = 1;
+
+  for(var i = 0; i < exponent;i++){
+    runningTotal *= base;
+  } 
+ return runningTotal;
+}
+powers(2 , 4)
 /*
 * write a function called logArr that will log each item in an array
 */
+var myArray = ["String1", "String2", "String3", "String4"];
+function logArr(){
+    for (var i = 0; i < myArray.length; i++)
+    console.log(myArray[i]);
+}
+logArr(myArray);
 
 /**
     Fill in the necessary parts of the findById function below
 */
-var users = [{id: 1, name: 'Jon'},{id: 2, name: 'Yuli'},{id: 21, name: 'Peter'},{id: 17, name: 'St. MaryLou de la playa carmen'},{id: 51, name: 'Doug'},{id: 881, name: 'Paul'},{id: 0, name: 'Jon'},{id: 999, name: 'Timma'}]
+var users = [{id: 1, name: 'Jon'},{id: 2, name: 'Yuli'},{id: 21, name: 'Peter'},{id: 17, name: 'St. MaryLou de la playa carmen'},{id: 51, name: 'Doug'},{id: 881, name: 'Paul'},{id: 0, name: 'Jon'},{id: 999, name: 'Timma'}];
 
 function findById(id){
+    for(var i = 0; i < users.length; i++){
+        if (users[i].id === id){
+          console.log(users[i]);
+        
+        }
+        else{
+            console.log("4 {error: 'Sorry that user id could not be found'}");
+        }
+    }   
 
 }
 findById(17) //Should return {id: 17, name: 'St. MaryLou de la playa carmen'}
